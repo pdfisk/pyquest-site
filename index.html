@@ -4,7 +4,11 @@
 <head>
     <title>PyQuest</title>
     <script type="text/javascript">
-        console.log('PYQUEST SITE');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            console.log("Mobile device detected");
+        } else {
+            console.log("Not a mobile device");
+        }
     </script>
 </head>
 
