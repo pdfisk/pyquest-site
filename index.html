@@ -2,103 +2,87 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <!-- Setup the viewport for mobile and desktop environments -->
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <!-- Setup the viewport for mobile and desktop environments -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <!-- Configure linking of this application to the home screen of mobile devices -->
-    <meta name="apple-mobile-web-app-title" content="app" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="apple-touch-icon" href="resource/app/app.png" />
-    <link rel="manifest" href="/manifest.json" />
+  <!-- Configure linking of this application to the home screen of mobile devices -->
+  <meta name="apple-mobile-web-app-title" content="app" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="apple-touch-icon" href="resource/app/app.png" />
+  <link rel="manifest" href="/manifest.json" />
 
-    <!-- Disable chrome translation requests and automatic phone number linking -->
-    <meta name="google" value="notranslate" />
-    <meta name="format-detection" content="telephone=no" />
+  <!-- Disable chrome translation requests and automatic phone number linking -->
+  <meta name="google" value="notranslate" />
+  <meta name="format-detection" content="telephone=no" />
 
-    <!-- Shortcut icon setup -->
-    <link rel="shortcut icon" type="image/png" href="resource/icons/favicon.png" />
-    <link rel="mask-icon" href="resource/icons/favicon.png" />
-    <style>
-        body {
-          padding: 0px;
-          margin: 0px;
-          width: 100%;
-          height: 100%;
-          position: fixed;
-          -webkit-touch-callout: none !important;
-          overflow: hidden;
-        }
-    
-        .tile-button,
-        .toolbar-button {
-          -webkit-background-clip: padding-box;
-          -moz-background-clip: padding-box;
-          background-clip: padding-box;
-          background-color: #fff;
-          background-image: -webkit-linear-gradient(white, #bdbdbd);
-          background-image: -moz-linear-gradient(white, #bdbdbd);
-          background-image: -ms-linear-gradient(white, #bdbdbd);
-          background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, white), color-stop(1, #bdbdbd));
-          background-image: linear-gradient(white, #bdbdbd);
-          -moz-border-radius: .25rem;
-          -webkit-border-radius: .25rem;
-          border-radius: .25rem;
-          color: #383838;
-          border: .0625rem solid #646464;
-          cursor: pointer;
-          font-weight: bold;
-          font-size: .9375rem;
-          text-align: center;
-          padding-top: .125rem;
-          padding-bottom: .125rem;
-          padding-left: 1.25rem;
-          padding-right: 1.25rem;
-          height: 1.875rem;
-          line-height: unset !important;
-          width: auto;
-        }
-      </style>
+  <!-- Shortcut icon setup -->
+  <link rel="shortcut icon" type="image/png" href="resource/icons/favicon.png" />
+  <link rel="mask-icon" href="resource/icons/favicon.png" />
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      -webkit-touch-callout: none !important;
+      overflow: hidden;
+    }
 
-    <title>PyQuest Mobile</title>
-    <link rel="stylesheet" href="resource/app/css/custom.css">
-    <script type="text/javascript" src="js/mobile.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    .tile-button,
+    .toolbar-button {
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding-box;
+      background-clip: padding-box;
+      background-color: #fff;
+      background-image: -webkit-linear-gradient(white, #bdbdbd);
+      background-image: -moz-linear-gradient(white, #bdbdbd);
+      background-image: -ms-linear-gradient(white, #bdbdbd);
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, white), color-stop(1, #bdbdbd));
+      background-image: linear-gradient(white, #bdbdbd);
+      -moz-border-radius: .25rem;
+      -webkit-border-radius: .25rem;
+      border-radius: .25rem;
+      color: #383838;
+      border: .0625rem solid #646464;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: .9375rem;
+      text-align: center;
+      padding-top: .125rem;
+      padding-bottom: .125rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      height: 1.875rem;
+      line-height: unset !important;
+      width: auto;
+    }
+  </style>
+
+  <title>PyQuest Mobile</title>
+  <link rel="stylesheet" href="resource/app/css/custom.css">
+  <script type="text/javascript" src="js/mobile.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Source+Code+Pro&display=swap"
-        rel="stylesheet">
-    <script type="text/javascript" src="resource/js/ace/ace.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/vista.nocache.js"></script>
-    <script type="text/javascript" src="js/vm.js"></script>
-    <noscript><h1>JavaScript must be enabled for this app</h1></noscript>
-    <script>navigator.serviceWorker.register("/pwabuilder-sw.js")</script>
-    <script data-build="2023-08-07T20:52:52">
-      if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-        window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/pwabuilder-sw.js')
-          .then(function(reg) {
-          reg.onupdatefound = function() {
-            var installingWorker = reg.installing;
-            installingWorker.onstatechange = function() {
-            if (installingWorker.state === 'installed') {
-              window.dispatchEvent(new Event('swUpdate'))
-            }
-            }
-          }
-          })
-          .catch(function(err) { console.error('service worker error', err) });
-        });
-      }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Source+Code+Pro&display=swap"
+    rel="stylesheet">
+  <script type="text/javascript" src="resource/js/ace/ace.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/vista.nocache.js"></script>
+  <script type="text/javascript" src="js/vm.js"></script>
+  <noscript>
+    <h1>JavaScript must be enabled for this app</h1>
+  </noscript>
 </body>
 
 </html>
