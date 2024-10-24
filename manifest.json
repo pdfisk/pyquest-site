@@ -1,70 +1,70 @@
 {
-  "id": "/",
-  "dir": "ltr",
-  "lang": "en",
-  "name": "PyQuest",
-  "scope": "/",
-  "display": "standalone",
-  "start_url": "/",
-  "short_name": "PyQuest",
-  "theme_color": "#FFFFFF",
-  "description": "PyQuest is an educational application for learning to program in Python.",
-  "orientation": "natural",
-  "background_color": "#FFFFFF",
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "display_override": [
-    "window-controls-overlay"
-  ],
-  "screenshots": [
-    {
-      "src": "/resource/screenshots/top_menu.png"
+    "id": "/",
+    "dir": "ltr",
+    "lang": "en",
+    "name": "PyQuest",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "/",
+    "short_name": "PyQuest",
+    "theme_color": "#FFFFFF",
+    "description": "PyQuest is an educational application for learning to program in Python.",
+    "orientation": "portrait-primary",
+    "background_color": "#FFFFFF",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "display_override": [
+        "window-controls-overlay"
+    ],
+    "screenshots": [
+        {
+            "src": "/resource/screenshots/top_menu.png"
+        },
+        {
+            "src": "/resource/screenshots/projects.png"
+        },
+        {
+            "src": "/resource/screenshots/editor.png"
+        },
+        {
+            "src": "/resource/screenshots/chicklet_1.png"
+        }
+    ],
+    "features": [
+        "fast",
+        "fun"
+    ],
+    "icons": [
+        {
+            "src": "/resource/icons/python-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/resource/icons/python-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/resource/icons/python-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/resource/icons/python-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "categories": [
+        "education"
+    ],
+    "launch_handler": {
+        "client_mode": "navigate-existing"
     },
-    {
-      "src": "/resource/screenshots/projects.png"
-    },
-    {
-      "src": "/resource/screenshots/editor.png"
-    },
-    {
-      "src": "/resource/screenshots/chicklet_1.png"
-    }
-  ],
-  "features": [
-    "Cross Platform",
-    "fast"
-  ],
-  "icons": [
-    {
-      "src": "/resource/icons/python-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/resource/icons/python-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/resource/icons/python-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/resource/icons/python-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "categories": [
-    "education"
-  ],
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
-  "edge_side_panel": {}
+    "edge_side_panel": {}
 }
