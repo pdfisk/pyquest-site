@@ -9,7 +9,7 @@
   "short_name": "PyQuest",
   "theme_color": "#FFFFFF",
   "description": "PyQuest is an educational application for learning to program in Python.",
-  "orientation": "any",
+  "orientation": "natural",
   "background_color": "#FFFFFF",
   "related_applications": [],
   "prefer_related_applications": false,
