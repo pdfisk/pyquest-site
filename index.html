@@ -1,388 +1,113 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html><head>
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>PyScript is an open source platform for Python in the browser.</title>
-    <meta name="description" content="PyScript">
-    <meta name="author" content="Anaconda Inc.">
-    <meta property="og:title" content="Pyscript.net">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="PyScript is a platform for Python in the browser.">
-    <meta property="og:image" content="/assets/images/pyscript-preview.png">
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <!-- CSS for examples -->
+    <link rel="stylesheet" href="./assets/css/examples.css">
 
-    <link rel="icon" href="/assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <!-- This script tag bootstraps PyScript -->
+    <script type="text/javascript" async="" src="https://cdn.heapanalytics.com/js/heap-758475466.js"></script><script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/assets/css/main.min.css?v=1.6">
-
-    <script src="/assets/js/mailerlite-script.min.js?=v1.0" defer></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKETQQ110J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-LKETQQ110J');
+    <!-- for splashscreen -->
+    <style>
+        #loading { outline: none; border: none; background: transparent }
+    </style>
+    <script type="module">
+        const loading = document.getElementById('loading');
+        addEventListener('py:ready', () => loading.close());
+        loading.showModal();
     </script>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2025.5.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2025.5.1/core.js"></script>
-</head>
+
+    <title>PyScript Hello World</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+    <link rel="manifest" href="./psadc-manifest.json">
+    <script type="text/javascript" async="" src="//t.contentsquare.net/uxa/07f601a1d4aaf.js"></script></head>
 
 <body>
-<main class="main">
+<dialog id="loading">
+    <h1>Loading...</h1>
+</dialog>
 
-    <!-- begin header -->
-    <header class="site-header">
-        <div class="logo">
-            <img src="/assets/images/pyscript-sticker-black.svg">
-            <strong class="subhead">PyScript is an <u>open source</u>
-                platform for <em>Python in the browser</em>.</strong><br/>
-            <span class="subhead">The latest version is <a href="https://pyscript.net/releases/2025.5.1/" target="_blank">2025.5.1</a>.</span>
-    </header>
-    <!-- end header -->
+<nav class="navbar" style="background-color: #000000">
+    <div class="app-header">
+        <a href="/">
+            <img src="./assets/logo.png" class="logo">
+        </a>
+        <a class="title" href="" style="color: #f0ab3c">Hello World</a>
+    </div>
+</nav>
 
-    <section class="content">
-
-        <!-- begin terminal window -->
-        <div id="new-terminal">
-            <script id="python-terminal" type="mpy" terminal>
-                import code
-                code.interact()
-            </script>
-            <script type="mpy" src="./main.py"></script>
-        </div>
-
-        <div class="old-terminal" id="old-terminal">
-            <div class="menu">
-                <div class="window-buttons close"></div>
-                <div class="window-buttons minimize"></div>
-                <div class="window-buttons zoom"></div>
-            </div>
-            <div class="screen">
-                <div class="code">
-
-                            <pre id="typewriter">
-                            Wouldn't it be cool...
-                            to run Python...
-                            in your browser?
-                            </pre>
-
-                    <p class="line1">&lt;html&gt;<span class="cursor1">|</span></p>
-                    <p class="line2">&nbsp;&nbsp;...<span class="cursor2">|</span></p>
-                    <p class="line3">&nbsp;&nbsp;&lt;script type="py"&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #aaa;"><span style="color:#FFD580;">print</span>(<span style="color:#BAE67E;">'You can!'</span>)</span><br/>&nbsp;&nbsp;&lt;/script&gt;<span class="cursor3">|</span></p>
-                    <p class="line4">&lt;/html&gt;<span class="cursor4">|</span></p>
-
-                    <p class="line5"><span class="cursor5">|</span></p>
-
-                </div>
-            </div>
-        </div>
-        <!-- end terminal window -->
-
-
-        <div class="dialogs">
-            <!-- begin pyscript.com badge -->
-            <a href="https://pyscript.com/" target="_blank" rel="noreferrer noopener" class="examples-block">
-                <div class="glyph">
-                    <svg id="pyscript-logo-icon" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 165 155">
-                        <path d="M155.621 28.601C132.42-5.336 76.466-5.723 42.438 10.485-8.056 34.533-1.18 86.205 2.62 135.64c.295 3.812.605 7.706 2.147 11.203 1.538 3.498 4.56 6.59 8.346 7.145a8.704 8.704 0 0 0 4.41-.483c4.691-1.763 8.173-7.285 9.972-12.386 9.366-26.575 22.345-13.358 43.588-9.822 2.849.474 5.716.865 8.584 1.165l6.136-16.054-23.68-59.474a15.412 15.412 0 0 1 14.333-21.106c6.818 0 12.974 4.295 15.314 10.691l10.615 28.957 9.613-28.817a15.834 15.834 0 0 1 15.044-10.83 14.78 14.78 0 0 1 12.069 6.255 14.756 14.756 0 0 1 1.833 13.46l-26.398 73.734c24.295-8.256 43.956-29.783 49.092-55.01 3.167-15.556.933-32.551-8.027-45.662l.009-.005Z"/>
-                    </svg>
-                </div>
-                <div>
-                    <h2>Try it out!</h2>
-                    <p><span>PyScript.com</span> is free and easy.</p>
-                </div>
-            </a>
-            <!-- end pyscript.com badge -->
-
-            <!-- begin documentation dropdown -->
-            <a href="https://pyscript.github.io/docs/latest/" target="_blank" rel="noreferrer noopener" class="examples-block" tabindex="1">
-                <div class="glyph">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z"/></svg>
-                </div>
-
-                <div>
-                    <h2>Documentation</h2>
-                    <p>For beginners and advanced users.</p>
-                </div>
-            </a>
-            <!-- end documentation dropdown -->
-
-
-        </div>
-
-        <!-- begin dialog content -->
-        <div class="dialogs">
-            <!-- begin examples badge -->
-            <a href="https://pyscript.com/@examples" target="_blank" rel="noreferrer noopener" class="dialog">
-                <div class="glyph">
-                    <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-grid">
-                        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-                    </svg>
-                </div>
-                <div>
-                    <h2>Examples</h2>
-                    <p>See what PyScript can do.</p>
-                </div>
-            </a>
-            <!-- end examples badge -->
-
-            <!-- begin community badge -->
-            <a href="https://discord.gg/HxvBtukrg2" target="_blank" rel="noreferrer noopener" class="dialog">
-                <div class="glyph">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 64a64 64 0 1 1 128 0A64 64 0 1 1 64 64zM25.9 233.4C29.3 191.9 64 160 105.6 160h44.8c27 0 51 13.4 65.5 34.1c-2.7 1.9-5.2 4-7.5 6.3l-64 64c-21.9 21.9-21.9 57.3 0 79.2L192 391.2V464c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V348.3c-26.5-9.5-44.7-35.8-42.2-65.6l4.1-49.3zM448 64a64 64 0 1 1 128 0A64 64 0 1 1 448 64zM431.6 200.4c-2.3-2.3-4.9-4.4-7.5-6.3c14.5-20.7 38.6-34.1 65.5-34.1h44.8c41.6 0 76.3 31.9 79.7 73.4l4.1 49.3c2.5 29.8-15.7 56.1-42.2 65.6V464c0 26.5-21.5 48-48 48H496c-26.5 0-48-21.5-48-48V391.2l47.6-47.6c21.9-21.9 21.9-57.3 0-79.2l-64-64zM272 240v32h96V240c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l64 64c9.4 9.4 9.4 24.6 0 33.9l-64 64c-6.9 6.9-17.2 8.9-26.2 5.2s-14.8-12.5-14.8-22.2V336H272v32c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-64-64c-9.4-9.4-9.4-24.6 0-33.9l64-64c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2z"/></svg>
-                </div>
-                <div>
-                    <h2>Community</h2>
-                    <p>Connect with other PyScript users.</p>
-                </div>
-            </a>
-            <!-- end community badge -->
-
-        </div>
-        <!-- end dialog content -->
-        <style type="text/css">
-
-            .g-recaptcha {
-                transform: scale(1);
-                -webkit-transform: scale(1);
-                transform-origin: 0 0;
-                -webkit-transform-origin: 0 0;
-                height: ;
-            }
-
-            .sr-only {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0,0,0,0);
-                border: 0;
-            }
-        </style>
-
-        <div class="newsletter-section">
-            <div id="newsletter-form-container" class="newsletter-form-container">
-                <div class="newsletter-wrapper">
-                    <div class="newsletter-body">
-                        <div class="newsletter-content">
-                            <h4>PyScript Newsletter</h4>
-                            <p>Signup for news and special offers!</p>
-                        </div>
-
-                        <form class="newsletter-form">
-                            <div class="newsletter-field">
-                                <input aria-label="email" aria-required="true" type="email"
-                                       name="fields[email]" placeholder="Email" autocomplete="email">
-                            </div>
-
-                            <div class="newsletter-checkbox">
-                                <label>
-                                    <input type="checkbox" required>
-                                    <div class="label-description">
-                                        <p>Opt in to receive news and updates.</p>
-                                    </div>
-                                </label>
-                            </div>
-
-                            <div class="newsletter-privacy">
-                                <p>You can unsubscribe anytime. For more details, review our
-                                    <a href="https://pyscript.net/privacy/" target="_blank">Privacy Policy</a>.</p>
-                            </div>
-
-                            <div class="newsletter-submit">
-                                <button type="submit" class="primary">Subscribe</button>
-                                <button disabled="disabled" class="loading" style="display: none;">
-                                    <div class="loading-indicator" style="display: none;"></div>
-                                </button>
-                            </div>
-                            <div>
-                                <br/><p><a href="/news">Read previous editions</a>.</p>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="newsletter-success">
-                        <h4>Thank you!</h4>
-                        <p>You have successfully joined our subscriber list.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            function ml_webform_success_17564783() {
-                var $ = ml_jQuery || jQuery;
-                $('.ml-subscribe-form-17564783 .row-success').show();
-                $('.ml-subscribe-form-17564783 .row-form').hide();
-            }
-        </script>
-        <!-- Social media form -->
-        <div class="social">
-            <figure class="profile">
-                <svg width="256px" height="209px" viewBox="0 0 256 209" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-                    <g>
-                        <path d="M256,25.4500259 C246.580841,29.6272672 236.458451,32.4504868 225.834156,33.7202333 C236.678503,27.2198053 245.00583,16.9269929 248.927437,4.66307685 C238.779765,10.6812633 227.539325,15.0523376 215.57599,17.408298 C205.994835,7.2006971 192.34506,0.822 177.239197,0.822 C148.232605,0.822 124.716076,24.3375931 124.716076,53.3423116 C124.716076,57.4586875 125.181462,61.4673784 126.076652,65.3112644 C82.4258385,63.1210453 43.7257252,42.211429 17.821398,10.4359288 C13.3005011,18.1929938 10.710443,27.2151234 10.710443,36.8402889 C10.710443,55.061526 19.9835254,71.1374907 34.0762135,80.5557137 C25.4660961,80.2832239 17.3681846,77.9207088 10.2862577,73.9869292 C10.2825122,74.2060448 10.2825122,74.4260967 10.2825122,74.647085 C10.2825122,100.094453 28.3867003,121.322443 52.413563,126.14673 C48.0059695,127.347184 43.3661509,127.988612 38.5755734,127.988612 C35.1914554,127.988612 31.9009766,127.659938 28.694773,127.046602 C35.3777973,147.913145 54.7742053,163.097665 77.7569918,163.52185 C59.7820257,177.607983 37.1354036,186.004604 12.5289147,186.004604 C8.28987161,186.004604 4.10888474,185.75646 0,185.271409 C23.2431033,200.173139 50.8507261,208.867532 80.5109185,208.867532 C177.116529,208.867532 229.943977,128.836982 229.943977,59.4326002 C229.943977,57.1552968 229.893412,54.8901664 229.792282,52.6381454 C240.053257,45.2331635 248.958338,35.9825545 256,25.4500259" fill="#55acee"></path>
-                    </g>
-                </svg>
-
-                <div class="avatar"><img src="/assets/images/avatar.jpg"></div>
-                <div class="bio">
-                    <h5>pyscript_dev</h5>
-                    <a href="https://twitter.com/pyscript_dev" target="_blank" class="link">@pyscript_dev</a>
-                    <p>PyScript - programming for the 99%</p>
-
-                    <a href="https://twitter.com/pyscript_dev" class="button twitter" target="_blank">Follow us on Twitter</a>
-                </div>
-            </figure>
-        </div>
-
-        <!-- begin readme content -->
-        <div class="readme">
-            <h1 id="pyscript">Say Hello to PyScript 👋</h1>
-
-            <p><strong>PyScript</strong> is an <a href="https://github.com/pyscript/pyscript">open source</a> platform for <a href="https://python.org" target="_blank">Python</a> in the
-                <a href="https://en.wikipedia.org/wiki/Web_browser" target="_blank">browser</a>.</p>
-
-            <p>PyScript brings together two of the most vibrant technical ecosystems on the
-                planet. If <a href="https://en.wikipedia.org/wiki/World_Wide_Web" target="_blank">the web</a> and Python
-                had a baby, you'd get PyScript.</p>
-
-            <p>At the core of PyScript is a <em>philosophy of digital empowerment</em>. The web is
-                the world's most ubiquitous computing platform, mature and familiar to billions
-                of people. Python is one of the
-                <a href="https://spectrum.ieee.org/the-top-programming-languages-2023" target="_blank">world's most popular programming languages</a>.</p>
-            <p>With PyScript, <em>Python runs anywhere there's a
-                browser (<u>which is everywhere</u>)</em>.</p>
-
-            <h2>PyScript is...</h2>
-            <ul>
-                <li><strong>Easy</strong>: your apps run in the browser with no complicated installation
-                    required.</li>
-                <li><strong>Expressive</strong>: create apps with a powerful, popular and easy to learn
-                    language like Python.</li>
-                <li><strong>Scalable</strong>: no need for expensive infrastructure ~ your code runs in
-                    your user's browser.</li>
-                <li><strong>Shareable</strong>: applications are just a URL on the web. That's it!</li>
-                <li><strong>Universal</strong>: your code runs anywhere a browser runs... which is
-                    <em>everywhere</em>!</li>
-                <li><strong>Secure</strong>: PyScript runs in the world's most battle-tested computing
-                    platform, the browser!</li>
-                <li><strong>Powerful</strong>: the best of the web and Python, together at last.</li>
-            </ul>
-
-        </div>
-        <!-- end readme content -->
-
-        <footer class="site-footer">
-            <a href="https://github.com/pyscript/pyscript" class="footer-button" target="_blank">
-                <div class="icon">
-                    <svg width="1024px" height="1024px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon">
-                        <path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"/>
-                    </svg>
-                </div>
-                <div>
-                    <span>Source code</span>
-                </div>
-            </a>
-
-            <div class="copyright">
-                <p>Copyright &copy; 2022-present, PyScript Development Team - Originated at <a href="https://anaconda.com" target="_blank">Anaconda, Inc.</a> in 2022
-            </div>
-        </footer>
-
-    </section>
-</main>
+<section class="pyscript">
+    Hello world! <br>
+    This is the current date and time, as computed by Python:
+    <script type="py">
+        from pyscript import display
+        from datetime import datetime
+        now = datetime.now()
+        display(now.strftime("%m/%d/%Y, %H:%M:%S"))
+    </script><script-py id="py-0"><div>05/31/2025, 11:09:20</div></script-py>
+</section>
+<svg style="z-index:9997;position:fixed;bottom:0;right:0" viewBox="0 0 315 27" width="315" height="27">
+    <path d="M143.905 0.043004L85.585 0.105C75.385 0.0870005 66.415 1.866 58.655 5.535C50.765 9.265 42.855 12.989 34.975 16.73C27.165 20.443 26.057 22.638 15.778 22.501C5.775 22.368 2.44 26.781 0 26.781L0.545006 26.693C22.005 26.672 43.455 26.676 64.915 26.676C90.655 26.676 116.395 26.665 142.135 26.699C143.115 26.699 143.915 26.259 143.915 25.707C143.855 11.729 143.855 14.026 143.915 0.0490007L143.905 0.043004Z" fill="#292929"></path>
+    <path d="M140.258 0L315 0.340524L314.966 27L140 26.9616L140.258 0Z" fill="#292929"></path>
+</svg>
+<div style="z-index:9998;font-family:sans-serif;background-color:#292929;padding:2px 8px;position:fixed;bottom:0;right:0;left:0"></div>
+<div style="z-index:9999;color:white;font-size: 0.7rem;font-family:sans-serif;padding: 5px;position:fixed;bottom:0;right:0">
+    <a href="https://pyscript.com/@examples" id="made-on" target="_blank" style="color:#FFF;text-decoration:none;">Made on pyscript.com</a>&nbsp;│&nbsp;<a href="https://pyscript.com/@examples/hello-world/latest" id="view-code" target="_blank" style="color:#FFF;text-decoration:none;">View Code</a><span id="install-pwa-section">&nbsp;│&nbsp; <a id="install-pwa" style="cursor:pointer; color:#FFF;">Install</a></span>&nbsp;&nbsp;
+</div>
 
 <script>
-    // Typing animation
-    function setupTypewriter(t) {
-        var HTML = t.innerHTML;
+    let installPrompt = null;
+    const installSection = document.querySelector("#install-pwa-section")
+    const installButton = document.querySelector("#install-pwa");
 
-        t.innerHTML = '';
+    window.addEventListener("beforeinstallprompt", (event) => {
+        if ("onappinstalled" in window) {
+            installSection.removeAttribute("hidden")
+        }
+        event.preventDefault();
+        installPrompt = event;
+    });
 
-        var cursorPosition = 0,
-            tag = '',
-            writingTag = false,
-            tagOpen = false,
-            typeSpeed = 100,
-            tempTypeSpeed = 0;
+    installButton.addEventListener("click", async () => {
+        if (!installPrompt) {
+            return;
+        }
+        const result = await installPrompt.prompt();
+        disableInAppInstallPrompt();
+    });
 
-        var type = function() {
+    function disableInAppInstallPrompt() {
+        installPrompt = null;
+        installButton.setAttribute("hidden", "");
+    };
+</script>
 
-            if (writingTag === true) {
-                tag += HTML[cursorPosition];
-            }
+<script>
+    const heap_app_id = "758475466";
+    // Only add analytics if we got an id
+    if (heap_app_id) {
+        // Analytics code
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+        heap.load(heap_app_id);
 
-            if (HTML[cursorPosition] === '<') {
-                tempTypeSpeed = 0;
-                if (tagOpen) {
-                    tagOpen = false;
-                    writingTag = true;
-                } else {
-                    tag = '';
-                    tagOpen = true;
-                    writingTag = true;
-                    tag += HTML[cursorPosition];
-                }
-            }
-            if (!writingTag && tagOpen) {
-                tag.innerHTML += HTML[cursorPosition];
-            }
-            if (!writingTag && !tagOpen) {
-                if (HTML[cursorPosition] === ' ') {
-                    tempTypeSpeed = 0;
-                }
-                else {
-                    tempTypeSpeed = (Math.random() * typeSpeed) + 50;
-                }
-                t.innerHTML += HTML[cursorPosition];
-            }
-            if (writingTag === true && HTML[cursorPosition] === '>') {
-                tempTypeSpeed = (Math.random() * typeSpeed) + 50;
-                writingTag = false;
-                if (tagOpen) {
-                    var newSpan = document.createElement('span');
-                    t.appendChild(newSpan);
-                    newSpan.innerHTML = tag;
-                    tag = newSpan.firstChild;
-                }
-            }
-
-            cursorPosition += 1;
-            if (cursorPosition < HTML.length - 1) {
-                setTimeout(type, tempTypeSpeed);
-            }
-        };
-
-        return {
-            type: type
-        };
+        // Add event listener to the made-on link
+        document.querySelector("#made-on").addEventListener("click", () => {
+            heap.track("PSADC - Make on Pyscript");
+        });
+        // Add event listener to the view-code link
+        document.querySelector("#view-code").addEventListener("click", () => {
+            heap.track("PSADC - View Code");
+        });
+        // Add event listener to the install-pwa link
+        document.querySelector("#install-pwa").addEventListener("click", () => {
+            heap.track("PSADC - Install PWA");
+        });
     }
-
-    let typer = document.getElementById('typewriter');
-
-    typewriter = setupTypewriter(typewriter);
-
-    typewriter.type();
 </script>
 
-<!-- BEGIN HEAP INTEGRATION -->
-<script type="text/javascript">
-    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
-    heap.load("758475466");
-</script>
-<!-- END HEAP INTEGRATION -->
-</body>
-</html>
+<cs-native-frame-holder hidden=""></cs-native-frame-holder></body></html>
