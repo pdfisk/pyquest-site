@@ -1,4 +1,5 @@
-<html><head>
+<html>
+<head>
     <!-- Recommended meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -9,11 +10,16 @@
     <link rel="stylesheet" href="./assets/css/examples.css">
 
     <!-- This script tag bootstraps PyScript -->
-    <script type="text/javascript" async="" src="https://cdn.heapanalytics.com/js/heap-758475466.js"></script><script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script type="text/javascript" async="" src="https://cdn.heapanalytics.com/js/heap-758475466.js"></script>
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
     <!-- for splashscreen -->
     <style>
-        #loading { outline: none; border: none; background: transparent }
+        #loading {
+            outline: none;
+            border: none;
+            background: transparent
+        }
     </style>
     <script type="module">
         const loading = document.getElementById('loading');
@@ -25,7 +31,8 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png">
 
     <link rel="manifest" href="./psadc-manifest.json">
-    <script type="text/javascript" async="" src="//t.contentsquare.net/uxa/07f601a1d4aaf.js"></script></head>
+    <script type="text/javascript" async="" src="//t.contentsquare.net/uxa/07f601a1d4aaf.js"></script>
+</head>
 
 <body>
 <dialog id="loading">
@@ -49,15 +56,24 @@
         from datetime import datetime
         now = datetime.now()
         display(now.strftime("%m/%d/%Y, %H:%M:%S"))
-    </script><script-py id="py-0"><div>05/31/2025, 11:09:20</div></script-py>
+        display('HELLO PYQUEST!!!')
+    </script>
+    <script-py id="py-0">
+        <div>05/31/2025, 11:09:20</div>
+    </script-py>
 </section>
 <svg style="z-index:9997;position:fixed;bottom:0;right:0" viewBox="0 0 315 27" width="315" height="27">
-    <path d="M143.905 0.043004L85.585 0.105C75.385 0.0870005 66.415 1.866 58.655 5.535C50.765 9.265 42.855 12.989 34.975 16.73C27.165 20.443 26.057 22.638 15.778 22.501C5.775 22.368 2.44 26.781 0 26.781L0.545006 26.693C22.005 26.672 43.455 26.676 64.915 26.676C90.655 26.676 116.395 26.665 142.135 26.699C143.115 26.699 143.915 26.259 143.915 25.707C143.855 11.729 143.855 14.026 143.915 0.0490007L143.905 0.043004Z" fill="#292929"></path>
+    <path d="M143.905 0.043004L85.585 0.105C75.385 0.0870005 66.415 1.866 58.655 5.535C50.765 9.265 42.855 12.989 34.975 16.73C27.165 20.443 26.057 22.638 15.778 22.501C5.775 22.368 2.44 26.781 0 26.781L0.545006 26.693C22.005 26.672 43.455 26.676 64.915 26.676C90.655 26.676 116.395 26.665 142.135 26.699C143.115 26.699 143.915 26.259 143.915 25.707C143.855 11.729 143.855 14.026 143.915 0.0490007L143.905 0.043004Z"
+          fill="#292929"></path>
     <path d="M140.258 0L315 0.340524L314.966 27L140 26.9616L140.258 0Z" fill="#292929"></path>
 </svg>
 <div style="z-index:9998;font-family:sans-serif;background-color:#292929;padding:2px 8px;position:fixed;bottom:0;right:0;left:0"></div>
 <div style="z-index:9999;color:white;font-size: 0.7rem;font-family:sans-serif;padding: 5px;position:fixed;bottom:0;right:0">
-    <a href="https://pyscript.com/@examples" id="made-on" target="_blank" style="color:#FFF;text-decoration:none;">Made on pyscript.com</a>&nbsp;│&nbsp;<a href="https://pyscript.com/@examples/hello-world/latest" id="view-code" target="_blank" style="color:#FFF;text-decoration:none;">View Code</a><span id="install-pwa-section">&nbsp;│&nbsp; <a id="install-pwa" style="cursor:pointer; color:#FFF;">Install</a></span>&nbsp;&nbsp;
+    <a href="https://pyscript.com/@examples" id="made-on" target="_blank" style="color:#FFF;text-decoration:none;">Made
+        on pyscript.com</a>&nbsp;│&nbsp;<a href="https://pyscript.com/@examples/hello-world/latest" id="view-code"
+                                           target="_blank" style="color:#FFF;text-decoration:none;">View Code</a><span
+        id="install-pwa-section">&nbsp;│&nbsp; <a id="install-pwa"
+                                                  style="cursor:pointer; color:#FFF;">Install</a></span>&nbsp;&nbsp;
 </div>
 
 <script>
@@ -92,7 +108,18 @@
     // Only add analytics if we got an id
     if (heap_app_id) {
         // Analytics code
-        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+        window.heap = window.heap || [], heap.load = function (e, t) {
+            window.heap.appid = e, window.heap.config = t = t || {};
+            var r = document.createElement("script");
+            r.type = "text/javascript", r.async = !0, r.src = "https://cdn.heapanalytics.com/js/heap-" + e + ".js";
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(r, a);
+            for (var n = function (e) {
+                return function () {
+                    heap.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            }, p = ["addEventProperties", "addUserProperties", "clearEventProperties", "identify", "resetIdentity", "removeEventProperty", "setEventProperties", "track", "unsetEventProperty"], o = 0; o < p.length; o++) heap[p[o]] = n(p[o])
+        };
         heap.load(heap_app_id);
 
         // Add event listener to the made-on link
@@ -110,4 +137,6 @@
     }
 </script>
 
-<cs-native-frame-holder hidden=""></cs-native-frame-holder></body></html>
+<cs-native-frame-holder hidden=""></cs-native-frame-holder>
+</body>
+</html>
