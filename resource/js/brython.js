@@ -899,7 +899,8 @@ $B.dispatch_load_event=function(script){
 script.dispatchEvent(new Event('load'))}
 function injectPythonScript(addedNode){
 if(addedNode.tagName=='SCRIPT' && addedNode.type=="text/python"){set_script_id(addedNode)
-run_scripts([addedNode])}}
+run_scripts([addedNode])
+console.log("RUN_SCRIPTS 2")}}
 function set_script_id(script){if(script_to_id.has(script)){}else if(script.id){if(defined_ids[script.id]){throw Error("Brython error : Found 2 scripts with the "+"same id '"+script.id+"'")}else{
 defined_ids[script.id]=true}
 script_to_id.set(script,script.id)}else{
@@ -988,6 +989,7 @@ src=(script.innerHTML ||script.textContent)
 src=unindent(src)
 src=src.replace(/^\n/,'')
 if(src.endsWith('\n')){src=src.substr(0,src.length-1)}
+window.X=[$B.run_script,script,src,module_name,$B.script_path,true];
 $B.tasks.push([$B.run_script,script,src,module_name,$B.script_path,true])}}
 $B.loop()}
 $B.run_script=function(script,src,name,url,run_loop){
@@ -28883,6 +28885,12 @@ throw Error(`unknown parse mode: ${p.mode}`)}};
 (function($B){window.pq_api=$B.Api={eval_code:(code)=>{
 console.log('eval_code',code);},get_timestamp:()=>{
 return $B.compiled_date;}};})(__BRYTHON__);
+;
+(function($B){const url='resource/python/index.py';
+fetch(url)
+.then(x=> x.text())
+.then(src=>{
+console.log('SRC',src);});})(__BRYTHON__);
 ;
 (function($B){$B.whenReady=new Promise(function(resolve,reject){resolve()})})(__BRYTHON__);
 ;
