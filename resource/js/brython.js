@@ -213,7 +213,7 @@ $B.unicode_bidi_whitespace=[9,10,11,12,13,28,29,30,31,32,133,5760,8192,8193,8194
 ;
 __BRYTHON__.implementation=[3,13,2,'dev',0]
 __BRYTHON__.version_info=[3,13,0,'final',0]
-__BRYTHON__.compiled_date="2025-07-18T13:47:59Z"
+__BRYTHON__.compiled_date="2025-07-20T20:14:43Z"
 __BRYTHON__.timestamp=1752757321
 __BRYTHON__.builtin_module_names=["_ajax","_ast","_base64","_binascii","_io_classes","_json","_jsre","_locale","_multiprocessing","_posixsubprocess","_profile","_random","_sre","_sre_utils","_string","_strptime","_svg","_symtable","_tokenize","_webcomponent","_webworker","_zlib_utils","array","builtins","dis","encoding_cp932","hashlib","html_parser","marshal","math","modulefinder","posix","pyexpat","python_re","unicodedata","xml_helpers","xml_parser"];
 ;
@@ -982,9 +982,10 @@ $B.file_cache[filename]=source
 $B.scripts[filename]=worker
 $B.dispatch_load_event(worker)}}
 for(var script of scripts){module_name=script_to_id.get(script)
+console.log('LOAD SCRIPT',module_name,script);
 if(script.src){
 $B.tasks.push([$B.ajax_load_script,{script,name:module_name,url:script.src,id:script.id}])}else{
-filename=$B.script_filename=$B.strip_host($B.script_path+"#"+module_name)
+filename=$B.script_filename=$B.strip_host($B.script_path+"#"+module_name);
 src=(script.innerHTML ||script.textContent)
 src=unindent(src)
 src=src.replace(/^\n/,'')
@@ -1131,6 +1132,7 @@ req.onreadystatechange=function(){if(this.readyState==4){if(this.status==200){va
 if(s.is_ww){$B.webworkers[name]=script
 $B.file_cache[filename]=src
 $B.dispatch_load_event(script)}else{
+console.log('ajax_load_script',name,script,url,src.length);
 $B.tasks.splice(0,0,[$B.run_script,script,src,name,url,true])}
 loop()}else if(this.status==404){throw Error(url+" not found")}}}
 req.send()}else{

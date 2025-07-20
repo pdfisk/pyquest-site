@@ -1,5 +1,7 @@
-print('Hello One')
-print('Hello Two')
-print('Hello Three')
-print('Hello Four')
-print('Hello Five')
+from browser import window
+
+def hello(n):
+    for x in range(1,n+1):
+        print(f"{x} Hello World!")
+
+window.hello = hello
