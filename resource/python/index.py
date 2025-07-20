@@ -1,6 +1,8 @@
 import sys
-from browser import window
 from io import StringIO
+
+from browser import window
+
 
 def brython_eval(code):
     old_stdout = sys.stdout
@@ -17,4 +19,17 @@ def brython_eval(code):
         sys.stdout = old_stdout
         sys.stderr = old_stderr
     return result
+
+
 window.brython_eval = brython_eval
+
+
+def byython_eval2(code):
+    try:
+        exec(code)
+        return 'OK'
+    except Exception as e:
+        return str(e)
+
+
+window.brython_eval = byython_eval2

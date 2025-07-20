@@ -3441,11 +3441,17 @@ var res
 if(hash_method===_b_.object.__hash__){if(_b_.type.__getattribute__(klass,'__eq__')!==_b_.object.__eq__){throw _b_.TypeError.$factory("unhashable type: '"+$B.class_name(obj)+"'",'hash')}else{
 return obj.__hashvalue__=check_int(_b_.object.__hash__(obj))}}else{
 return check_int($B.$call(hash_method)(obj))}}
-var board=_b_.board=function(){var $ns=$B.args('print',0,{},[],arguments,{},'args','kw')
+_b_.board=function(){var $ns=$B.args('print',0,{},[],arguments,{},'args','kw')
 var kw=$ns['kw'],end=_b_.dict.get(kw,'end','\n'),sep=_b_.dict.get(kw,'sep',' '),file=_b_.dict.get(kw,'file',$B.get_stdout())
 var args=$ns['args'],writer=$B.$getattr(file,'write')
 console.log('BOARD',args);
 return None;}
+_b_.fetch=function(path,handlerFn){console.log('FETCH',typeof(path),typeof(handlerFn));
+fetch(path)
+.then(response=> response.text())
+.then(x=> handlerFn(x))
+.catch(err=> console.log(err));
+return 'FETCHED FILE CONTEXTS';}
 var help=_b_.help=function(obj){if(obj===undefined){obj='help'}
 if(typeof obj=='string'){var lib_url='https://docs.python.org/3/library'
 var parts=obj.split('.'),head=[],url
@@ -11331,7 +11337,7 @@ __class__:$io,__dict__:$B.empty_dict(),out,encoding:'utf-8'}})
 $io.flush=function(self){if(self.buf){
 var s=self.buf.join(''),chr0=String.fromCodePoint(0)
 s=s.replace(new RegExp(chr0,'g'),' ')
-console[self.out](s)
+if(window.pyquest.api.QxApi)window.pyquest.api.QxApi.pr(s);else console[self.out](s);
 self.buf=[]}}
 $io.write=function(self,msg){
 if(self.buf===undefined){self.buf=[]}
