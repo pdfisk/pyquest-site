@@ -1,7 +1,4 @@
-from browser import window
-
 def hello(n):
-    for x in range(1,n+1):
-        print(f"{x} Hello World!")
+    for i in range(1,n+1):
+        print(i, 'Yo DUDE!')
 
-window.hello = hello

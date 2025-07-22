@@ -213,8 +213,8 @@ $B.unicode_bidi_whitespace=[9,10,11,12,13,28,29,30,31,32,133,5760,8192,8193,8194
 ;
 __BRYTHON__.implementation=[3,13,2,'dev',0]
 __BRYTHON__.version_info=[3,13,0,'final',0]
-__BRYTHON__.compiled_date="2025-07-20T20:14:43Z"
-__BRYTHON__.timestamp=1752757321
+__BRYTHON__.compiled_date="2025-07-22T16:04:29Z"
+__BRYTHON__.timestamp=1753200424
 __BRYTHON__.builtin_module_names=["_ajax","_ast","_base64","_binascii","_io_classes","_json","_jsre","_locale","_multiprocessing","_posixsubprocess","_profile","_random","_sre","_sre_utils","_string","_strptime","_svg","_symtable","_tokenize","_webcomponent","_webworker","_zlib_utils","array","builtins","dis","encoding_cp932","hashlib","html_parser","marshal","math","modulefinder","posix","pyexpat","python_re","unicodedata","xml_helpers","xml_parser"];
 ;
 
@@ -3448,12 +3448,6 @@ var kw=$ns['kw'],end=_b_.dict.get(kw,'end','\n'),sep=_b_.dict.get(kw,'sep',' '),
 var args=$ns['args'],writer=$B.$getattr(file,'write')
 console.log('BOARD',args);
 return None;}
-_b_.fetch=function(path,handlerFn){console.log('FETCH',typeof(path),typeof(handlerFn));
-fetch(path)
-.then(response=> response.text())
-.then(x=> handlerFn(x))
-.catch(err=> console.log(err));
-return 'FETCHED FILE CONTEXTS';}
 var help=_b_.help=function(obj){if(obj===undefined){obj='help'}
 if(typeof obj=='string'){var lib_url='https://docs.python.org/3/library'
 var parts=obj.split('.'),head=[],url
