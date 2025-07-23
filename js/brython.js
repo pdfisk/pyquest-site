@@ -213,7 +213,7 @@ $B.unicode_bidi_whitespace=[9,10,11,12,13,28,29,30,31,32,133,5760,8192,8193,8194
 ;
 __BRYTHON__.implementation=[3,13,2,'dev',0]
 __BRYTHON__.version_info=[3,13,0,'final',0]
-__BRYTHON__.compiled_date="2025-07-22T16:04:29Z"
+__BRYTHON__.compiled_date="2025-07-23T04:53:58Z"
 __BRYTHON__.timestamp=1753200424
 __BRYTHON__.builtin_module_names=["_ajax","_ast","_base64","_binascii","_io_classes","_json","_jsre","_locale","_multiprocessing","_posixsubprocess","_profile","_random","_sre","_sre_utils","_string","_strptime","_svg","_symtable","_tokenize","_webcomponent","_webworker","_zlib_utils","array","builtins","dis","encoding_cp932","hashlib","html_parser","marshal","math","modulefinder","posix","pyexpat","python_re","unicodedata","xml_helpers","xml_parser"];
 ;
@@ -11333,7 +11333,7 @@ __class__:$io,__dict__:$B.empty_dict(),out,encoding:'utf-8'}})
 $io.flush=function(self){if(self.buf){
 var s=self.buf.join(''),chr0=String.fromCodePoint(0)
 s=s.replace(new RegExp(chr0,'g'),' ')
-if(window.pyquest.api.QxApi)window.pyquest.api.QxApi.pr(s);else console[self.out](s);
+if(window.QxApi)window.QxApi.pr(s);else console[self.out](s);
 self.buf=[]}}
 $io.write=function(self,msg){
 if(self.buf===undefined){self.buf=[]}
